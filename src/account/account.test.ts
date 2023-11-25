@@ -5,7 +5,7 @@ import { encodeCredentials } from '../auth/auth.utils'
 import { seller } from '../lib/test-data'
 import { Seller } from './account.interface'
 
-const mockUser = {
+const mockSeller = {
   city: expect.any(String),
   state: expect.any(String)
 }
@@ -30,7 +30,7 @@ describe('PUT /update_account_location', () => {
 
     expect(response.status).toBe(200)
     expect(response.body).toHaveProperty('data')
-    expect(response.body.data).toMatchObject({ city: 'new-city', state: 'new-state' })
+    expect(response.body.data).toMatchObject(mockSeller)
   })
 
   it('should handle updating with missing fields', async () => {
@@ -42,7 +42,7 @@ describe('PUT /update_account_location', () => {
 
     expect(response.status).toBe(200)
     expect(response.body).toHaveProperty('data')
-    expect(response.body.data).toMatchObject(mockUser)
+    expect(response.body.data).toMatchObject(mockSeller)
   })
 
   it('should handle updating with invalid input', async () => {
