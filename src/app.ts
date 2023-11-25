@@ -33,8 +33,8 @@ app.use(
   )
 )
 /* eslint-disable @typescript-eslint/no-misused-promises */
-app.get('/', auth, (_req: Request, res: Response) => {
-  res.send('Server is running')
+app.get('/', (_req: Request, res: Response) => {
+  res.status(200).send('Server is running')
 })
 
 app.use('/order_items', orderRouter)
