@@ -32,7 +32,6 @@ beforeAll(async () => {
   await productsCollection.insertMany(products)
 })
 
-
 describe('GET /order_items', () => {
   it('should return order items with correct data types', async () => {
     const response = await request(app)
@@ -100,7 +99,6 @@ describe('DELETE /order_items/:order_id/:productId', () => {
       .delete(`/order_items/${fakeOrderItem.productId}/${fakeOrderItem.orderItemId}`)
       .expect('Content-Type', /application\/json/)
       .set('Authorization', authorization)
-
 
     expect(response.status).toBe(200)
     expect(response.body).toHaveProperty('message')
