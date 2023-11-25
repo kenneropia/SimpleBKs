@@ -6,6 +6,7 @@
 	"scripts": {
 		"test": "dotenv -e .env.test -- jest --verbose --detectOpenHandles --runInBand --forceExit",
 		"dev": "npx dotenv -e .env npx tsx watch src/index.ts",
+	    "prestart": "tsc",
 		"start": "node build/src/index.js",
 		"lint": "clear && npx ts-standard --fix",
 		"build": "tsc"
