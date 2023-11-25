@@ -7,7 +7,7 @@ import { errorHandler } from './error/error.middleware'
 import { notFoundHandler } from './error/not-found.middleware'
 import morgan from 'morgan'
 import Logger from './lib/logger'
-import { auth } from './auth/auth.middleware'
+
 import { orderRouter } from './order/order.router'
 import { accountRouter } from './account/account.router'
 
